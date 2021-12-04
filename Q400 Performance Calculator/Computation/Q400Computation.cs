@@ -93,7 +93,7 @@ namespace Q400_Performance_Calculator.Computation
             if (Values.BasicVals.Flaps == FlapsSetting.F35) { Failed = true; return new TakeOffOutput(); }
             TakeOffOutput NewOutput = CurrOutput;
             if (CurrOutput.VR > CurrOutput.V2) { NewOutput.V2 = CurrOutput.VR; }
-            if (Values.AntiIce) { NewOutput.V2 += 20; }
+            if (Values.AntiIce) { NewOutput.V2 += 20; NewOutput.VCLB += 20; NewOutput.VFRI += 20; }
             if (Values.Conditions == RunwayConditions.WET || Values.Conditions == RunwayConditions.ICE)
             {
                 NewOutput.V1 -= 8;
